@@ -1,0 +1,745 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$font-col: #e9ebf8;
+$font-shade: #e9ebf880;
+$darkblue: #022050;
+$violet: #6550a5;
+$pink: #ff0ace;
+
+body {
+  background-image: url(../img/bg.jpeg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  font-family: "Kanit", sans-serif;
+  color: $font-col;
+}
+
+.navbar {
+  width: 10vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to top,
+    #02205080,
+    #17296080,
+    #28327080,
+    #3a3b8080,
+    #4c449080,
+    #5e489e80,
+    #714cac80,
+    #864fb880,
+    #a24bc380,
+    #c042ca80,
+    #df33ce80,
+    #ff0ace80
+  );
+  position: fixed;
+  .nav-logo {
+    background-image: url(../img/logo_transparent.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 32.5vh;
+    border-bottom: 1px solid $font-col;
+  }
+  .nav-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    li {
+      list-style-type: none;
+      text-align: center;
+      width: 10vw;
+      border-bottom: 1px solid $font-col;
+      padding: 2em;
+      
+      a {
+        text-decoration: none;
+        color: $font-col;
+        font-size: larger;
+      }
+    }
+    li::before {
+      content: "<li> ";
+      font-size: 0.75em;
+      font-family: "VT323", monospace;
+      color: $font-shade;
+    }
+    li::after {
+      content: " </li>";
+      font-size: 0.75em;
+      font-family: "VT323", monospace;
+      color: $font-shade;
+    }
+  }
+  .nav-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.5vh;
+    .fa-brands {
+      font-size: 2em;
+      padding: 0.25em;
+      color: $font-col;
+    }
+  }
+}
+main {
+  position: absolute;
+  left: 10vw;
+  height: 100vh;
+  width: 90%;
+}
+
+.home,
+.about,
+.skills,
+.work,
+.contact {
+  height: 80vh;
+  width: 100%;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: last baseline;
+  justify-content: flex-end;
+  padding-right: 8em;
+  span {
+    color: $pink;
+    display: inline-block;
+  }
+  span:hover {
+    animation: shake 0.5s 2;
+  }
+  h2 {
+    font-size: 4em;
+  }
+  h2::before {
+    content: "<h2> ";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+  h2::after {
+    content: " </h2>";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+}
+
+b:nth-child(1) {
+  animation: colorswag 2s 0.05s 2;
+}
+
+b:nth-child(2) {
+  animation: colorswag 2s 0.1s 2;
+}
+
+b:nth-child(3) {
+  animation: colorswag 2s 0.15s 2;
+}
+
+b:nth-child(4) {
+  animation: colorswag 2s 0.2s 2;
+}
+b:nth-child(5) {
+  animation: colorswag 2s 0.25s 2;
+}
+b:nth-child(6) {
+  animation: colorswag 2s 0.3s 2;
+}
+b:nth-child(7) {
+  animation: colorswag 2s 0.35s 2;
+}
+b:nth-child(8) {
+  animation: colorswag 2s 0.4s 2;
+}
+b:nth-child(9) {
+  animation: colorswag 2s 0.45s 2;
+}
+b:nth-child(10) {
+  animation: colorswag 2s 0.5s 2;
+}
+b:nth-child(11) {
+  animation: colorswag 2s 0.55s 2;
+}
+
+.hover-line {
+  position: relative;
+}
+
+.hover-line::before,
+.hover-line::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: $font-col;
+  transition: all 0.3s ease;
+}
+
+.hover-line::before {
+  top: 0;
+  left: 0;
+}
+
+.hover-line::after {
+  bottom: 0;
+  right: 0;
+}
+
+.hover-line:hover::before {
+  width: 100%;
+}
+
+.hover-line:hover::after {
+  width: 100%;
+  right: 0;
+  left: initial;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-2px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-2px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes colorswag {
+  100% {
+    color: $darkblue;
+  }
+}
+
+.contactme {
+  padding: 1em 2em;
+  border: 1px solid $font-shade;
+  border-radius: 0.5em;
+  color: $font-col;
+  text-decoration: none;
+  align-self: self-end;
+  margin: 3em 0;
+  transition: 0.25s;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  &:hover {
+    color: $pink;
+    border-color: $pink;
+  }
+  &:active {
+    transform: translateY(2px) translateX(2px);
+    box-shadow: none;
+  }
+}
+// About //
+
+.about-head {
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5rem;
+  &:before {
+    content: "<h2> ";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+  &:after {
+    content: " </h2>";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
+  .about {
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    font-size: 1.5em;
+    height: 75vh;
+    border: 1px solid $font-shade;
+    background-color: #0000005b;
+    border-radius: 0.5em;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    p {
+      padding: 0.5em;
+      &:before {
+        content: "<p> ";
+        font-size: 0.5em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+      &:after {
+        content: " </p>";
+        font-size: 0.5em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+    }
+    span {
+      color: transparent;
+    }
+    @for $i from 1 through 16 {
+      span:nth-child(#{$i}) {
+        animation: popup 1s (0.1s * $i) forwards;
+      }
+    }
+    h2 {
+      &:before {
+        content: "<h2> ";
+        font-size: 0.5em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+      &:after {
+        content: " </h2>";
+        font-size: 0.5em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+    }
+  }
+}
+footer .about-head {
+  position: fixed;
+  bottom: 0;
+  left: 10vw;
+  width: 90%;
+}
+
+@keyframes popup {
+  50% {
+    color: $pink;
+  }
+  100% {
+    color: $font-col;
+  }
+}
+// About End //
+
+// Skills //
+
+.skills {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  .card {
+    position: relative;
+    width: 350px;
+    height: 420px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.8s;
+
+    &:hover .front {
+      transform: rotateY(-180deg);
+    }
+
+    &:hover .back {
+      transform: rotateY(0deg);
+    }
+
+    .front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: transform 0.8s;
+      border-radius: 0.5em;
+      border: 1px solid $font-shade;
+      -webkit-box-shadow: -10px 0px 13px -7px #000000,
+        10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+      img {
+        width: 300px;
+        height: 300px;
+        padding: 1em;
+      }
+
+      h2,
+      p {
+        padding: 0.5em;
+      }
+      h2 {
+        &:before {
+          content: "<h2> ";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+        &:after {
+          content: " </h2>";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+      }
+      h3 {
+        &:before {
+          content: "<h3> ";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+        &:after {
+          content: " </h3>";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+      }
+      p {
+        font-size: 1.25em;
+        &:before {
+          content: "<p> ";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+        &:after {
+          content: " </p>";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+      }
+    }
+
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-color: #0000005b;
+      transition: transform 0.8s;
+      border-radius: 0.5em;
+      border: 1px solid $font-shade;
+      -webkit-box-shadow: -10px 0px 13px -7px #000000,
+        10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      transform: rotateY(180deg);
+      padding: 1em;
+      h2 {
+        padding: 1em;
+        &:before {
+          content: "<h2> ";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+        &:after {
+          content: " </h2>";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+      }
+      h3 {
+        &:before {
+          content: "<h3> ";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+        &:after {
+          content: " </h3>";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+      }
+      p {
+        color: $font-shade;
+        font-size: 1.25em;
+        &:before {
+          content: "<p> ";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+        &:after {
+          content: " </p>";
+          font-size: 0.5em;
+          font-family: "VT323", monospace;
+          color: $font-shade;
+        }
+      }
+    
+    }
+  }
+}
+
+.skills-head {
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5rem;
+  &:before {
+    content: "<h2> ";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+  &:after {
+    content: " </h2>";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+}
+
+footer .skills-head {
+  position: fixed;
+  bottom: 0;
+  left: 10vw;
+  width: 90%;
+}
+
+// Skills End //
+
+// Work //
+
+.work-head {
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5rem;
+  &:before {
+    content: "<h2> ";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+  &:after {
+    content: " </h2>";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+}
+
+.work-container {
+  display: flex;
+  padding: 2em;
+}
+
+footer .work-head {
+  position: fixed;
+  bottom: 0;
+  left: 10vw;
+  width: 90%;
+}
+
+// Work End //
+
+// Contact //
+.contact {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  .contactcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    padding: 0.5em;
+    border: 1px solid $font-shade;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    border-radius: 0.5em;
+    width: 35vw;
+    background-color: #0000005b;
+    form {
+      display: grid;
+      grid-template-columns: 3fr 5fr;
+      grid-template-rows: 0.5fr 0.5fr 1fr;
+      grid-template-areas:
+        "name email"
+        "betreff betreff"
+        "nachricht nachricht"
+        "button button";
+      grid-column-gap: 1em;
+      padding: 2em;
+      font-size: 1.5em;
+      .name {
+        grid-area: name;
+        display: flex;
+        flex-direction: column;
+      }
+      .email {
+        grid-area: email;
+        display: flex;
+        flex-direction: column;
+      }
+      .betreff {
+        grid-area: betreff;
+        display: flex;
+        flex-direction: column;
+      }
+      .nachricht {
+        grid-area: nachricht;
+        display: flex;
+        flex-direction: column;
+      }
+      .button {
+        grid-area: button;
+        padding: 1em 2em;
+        border: 1px solid $font-shade;
+        border-radius: 0.5em;
+        color: $font-col;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.25s;
+        -webkit-box-shadow: -10px 0px 13px -7px #000000,
+          10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+          position: relative;
+        &:hover {
+          color: $pink;
+          border-color: $pink;
+        }
+        &:active {
+          transform: translateY(2px) translateX(2px);
+          box-shadow: none;
+        }
+      }
+
+      input,
+      textarea {
+        margin-top: 1em;
+        padding: 0.5em;
+        border-radius: 0.25em;
+        background-color: #0000001f;
+        resize: none;
+        border: 1px solid transparent;
+        outline: none;
+        &:active,
+        &:focus,
+        &:hover {
+          border: 1px solid $pink;
+        }
+        &::placeholder {
+          color: $font-shade;
+          font-family: "Kanit", sans-serif;
+        }
+      }
+    }
+  }
+  .iframe {
+    iframe {
+      height: 76.5vh;
+      width: 35vw;
+      border-radius: 0.5em;
+      border: 1px solid $font-shade;
+      -webkit-box-shadow: -10px 0px 13px -7px #000000,
+        10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.contact-head {
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5rem;
+  &:before {
+    content: "<h2> ";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+  &:after {
+    content: " </h2>";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+}
+
+footer .contact-foot {
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5rem;
+  position: fixed;
+  font-size: 1.5em;
+  font-weight: lighter;
+  bottom: 0;
+  left: 10vw;
+  width: 90%;
+    &:before {
+      content: "<p> ";
+      font-size: 0.5em;
+      font-family: "VT323", monospace;
+      color: $font-shade;
+    }
+    &:after {
+      content: " </p>";
+      font-size: 0.5em;
+      font-family: "VT323", monospace;
+      color: $font-shade;
+  }
+  .fa-regular {
+    font-size: 0.75em;
+  }
+}
+
+// Contact End //
