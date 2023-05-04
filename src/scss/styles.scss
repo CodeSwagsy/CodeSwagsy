@@ -42,6 +42,8 @@ body {
     #ff0ace80
   );
   position: fixed;
+  -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 7px 5px 0px 5px rgba(210,110,255,0); 
+  box-shadow: 2px 5px 16px 0px #0B325E, 7px 5px 0px 5px rgba(210,110,255,0);
   .nav-logo {
     background-image: url(../img/logo_transparent.png);
     background-repeat: no-repeat;
@@ -249,7 +251,6 @@ align-items: center;
     width: 15em;
     padding: 0.5em;
     font-size: 1.5em;
-    border: 1px solid $font-shade;
     background-color: #0000005b;
     border-radius: 0.5em;
     -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -330,7 +331,7 @@ align-items: center;
       backface-visibility: hidden;
       transition: transform 0.8s;
       border-radius: 0.5em;
-      border: 1px solid $font-shade;
+      // border: 1px solid $font-shade;
       background-color: #0000005b;
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
         10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -400,7 +401,7 @@ align-items: center;
       background-color: #0000005b;
       transition: transform 0.8s;
       border-radius: 0.5em;
-      border: 1px solid $font-shade;
+      // border: 1px solid $font-shade;
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
         10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -515,7 +516,6 @@ align-items: center;
     text-align: center;
     background-color: #0000005b;
     border-radius: 0.5em;
-    border: 1px solid $font-shade;
     -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
       5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -581,7 +581,7 @@ align-items: center;
 }
 
 // Work End //
-// Contact - unter Media Query weil manche Sachen vom Media Query überschrieben wurden obwohl es in der Reihenfolge weiter oben war //
+// Contact //
 
 .contact {
   display: flex;
@@ -595,7 +595,6 @@ align-items: center;
     padding: 0.5em;
     height: 575px;
     width: 600px;
-    border: 1px solid $font-shade;
     -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
       5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -683,7 +682,6 @@ align-items: center;
       height: 575px;
       width: 600px;
       border-radius: 0.5em;
-      border: 1px solid $font-shade;
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
         10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -776,7 +774,7 @@ footer .contact-foot {
     position: fixed;
     z-index: 2;
     justify-content: space-between;
-    background-color: #202020;
+    background-color: #202020da;
     background-image: linear-gradient(
       to right,
       #02205080,
@@ -831,10 +829,8 @@ footer .contact-foot {
     align-items: center;
   }
   .home {
-    padding-right: 0;
-    position: relative;
-    padding: 2em;
-    align-items: start;
+    padding: 5em;
+    align-items: flex-start;
     justify-content: center;
     height: 100%;
     padding-right: 0;
@@ -947,6 +943,7 @@ footer .contact-foot {
     padding-top: 20vh;
   }
   .navbar {
+    justify-content: space-between;
     .nav-main {
       flex-direction: column;
       padding: 0;
@@ -959,6 +956,8 @@ footer .contact-foot {
     }
     .nav-contact {
       flex-direction: column;
+      align-items: center;
+      width: 25vw;
       .fa-brands {
         font-size: 1.5em;
       }
@@ -969,7 +968,7 @@ footer .contact-foot {
     align-items: flex-start;
     padding-right: 0;
     h2 {
-      font-size: 1.5em;
+      font-size: 2em;
     }
   }
   .contact {

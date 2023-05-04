@@ -94,6 +94,8 @@ body {
   height: 100vh;
   background-image: linear-gradient(to top, rgba(2, 32, 80, 0.5019607843), rgba(23, 41, 96, 0.5019607843), rgba(40, 50, 112, 0.5019607843), rgba(58, 59, 128, 0.5019607843), rgba(76, 68, 144, 0.5019607843), rgba(94, 72, 158, 0.5019607843), rgba(113, 76, 172, 0.5019607843), rgba(134, 79, 184, 0.5019607843), rgba(162, 75, 195, 0.5019607843), rgba(192, 66, 202, 0.5019607843), rgba(223, 51, 206, 0.5019607843), rgba(255, 10, 206, 0.5019607843));
   position: fixed;
+  -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 7px 5px 0px 5px rgba(210, 110, 255, 0);
+  box-shadow: 2px 5px 16px 0px #0B325E, 7px 5px 0px 5px rgba(210, 110, 255, 0);
 }
 .navbar .nav-logo {
   background-image: url(../img/logo_transparent.png);
@@ -371,7 +373,6 @@ main {
   width: 15em;
   padding: 0.5em;
   font-size: 1.5em;
-  border: 1px solid rgba(233, 235, 248, 0.5019607843);
   background-color: rgba(0, 0, 0, 0.3568627451);
   border-radius: 0.5em;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -484,7 +485,6 @@ main {
   backface-visibility: hidden;
   transition: transform 0.8s;
   border-radius: 0.5em;
-  border: 1px solid rgba(233, 235, 248, 0.5019607843);
   background-color: rgba(0, 0, 0, 0.3568627451);
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -545,7 +545,6 @@ main {
   background-color: rgba(0, 0, 0, 0.3568627451);
   transition: transform 0.8s;
   border-radius: 0.5em;
-  border: 1px solid rgba(233, 235, 248, 0.5019607843);
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   transform: rotateY(180deg);
@@ -651,7 +650,6 @@ main {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3568627451);
   border-radius: 0.5em;
-  border: 1px solid rgba(233, 235, 248, 0.5019607843);
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
@@ -722,7 +720,6 @@ main {
   padding: 0.5em;
   height: 575px;
   width: 600px;
-  border: 1px solid rgba(233, 235, 248, 0.5019607843);
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   border-radius: 0.5em;
@@ -803,7 +800,6 @@ main {
   height: 575px;
   width: 600px;
   border-radius: 0.5em;
-  border: 1px solid rgba(233, 235, 248, 0.5019607843);
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
@@ -887,7 +883,7 @@ footer .contact-foot .fa-regular {
     position: fixed;
     z-index: 2;
     justify-content: space-between;
-    background-color: #202020;
+    background-color: rgba(32, 32, 32, 0.8549019608);
     background-image: linear-gradient(to right, rgba(2, 32, 80, 0.5019607843), rgba(23, 41, 96, 0.5019607843), rgba(40, 50, 112, 0.5019607843), rgba(58, 59, 128, 0.5019607843), rgba(76, 68, 144, 0.5019607843), rgba(94, 72, 158, 0.5019607843), rgba(113, 76, 172, 0.5019607843), rgba(134, 79, 184, 0.5019607843), rgba(162, 75, 195, 0.5019607843), rgba(192, 66, 202, 0.5019607843), rgba(223, 51, 206, 0.5019607843), rgba(255, 10, 206, 0.5019607843));
   }
   .navbar .nav-main {
@@ -928,10 +924,8 @@ footer .contact-foot .fa-regular {
     align-items: center;
   }
   .home {
-    padding-right: 0;
-    position: relative;
-    padding: 2em;
-    align-items: start;
+    padding: 5em;
+    align-items: flex-start;
     justify-content: center;
     height: 100%;
     padding-right: 0;
@@ -1030,6 +1024,9 @@ footer .contact-foot .fa-regular {
   main {
     padding-top: 20vh;
   }
+  .navbar {
+    justify-content: space-between;
+  }
   .navbar .nav-main {
     flex-direction: column;
     padding: 0;
@@ -1042,6 +1039,8 @@ footer .contact-foot .fa-regular {
   }
   .navbar .nav-contact {
     flex-direction: column;
+    align-items: center;
+    width: 25vw;
   }
   .navbar .nav-contact .fa-brands {
     font-size: 1.5em;
@@ -1052,7 +1051,7 @@ footer .contact-foot .fa-regular {
     padding-right: 0;
   }
   .home h2 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .contact .contactcontainer {
     padding: 0.5em;
