@@ -10,6 +10,8 @@ $darkblue: #022050;
 $violet: #6550a5;
 $pink: #ff0ace;
 
+@import "keyframes";
+
 body {
   background-image: url(../img/bg.jpeg);
   background-position: bottom;
@@ -17,7 +19,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  height: 100vh;
   font-family: "Kanit", sans-serif;
   color: $font-col;
 }
@@ -59,8 +60,8 @@ body {
       text-align: center;
       width: 10vw;
       border-bottom: 1px solid $font-col;
-      padding: 2em;
-      
+      padding: 2em 0.5em;
+
       a {
         text-decoration: none;
         color: $font-col;
@@ -115,11 +116,7 @@ main {
   justify-content: flex-end;
   padding-right: 8em;
   span {
-    color: $pink;
-    display: inline-block;
-  }
-  span:hover {
-    animation: shake 0.5s 2;
+    color: transparent;
   }
   h2 {
     font-size: 4em;
@@ -136,43 +133,11 @@ main {
     font-family: "VT323", monospace;
     color: $font-shade;
   }
-}
-
-b:nth-child(1) {
-  animation: colorswag 2s 0.05s 2;
-}
-
-b:nth-child(2) {
-  animation: colorswag 2s 0.1s 2;
-}
-
-b:nth-child(3) {
-  animation: colorswag 2s 0.15s 2;
-}
-
-b:nth-child(4) {
-  animation: colorswag 2s 0.2s 2;
-}
-b:nth-child(5) {
-  animation: colorswag 2s 0.25s 2;
-}
-b:nth-child(6) {
-  animation: colorswag 2s 0.3s 2;
-}
-b:nth-child(7) {
-  animation: colorswag 2s 0.35s 2;
-}
-b:nth-child(8) {
-  animation: colorswag 2s 0.4s 2;
-}
-b:nth-child(9) {
-  animation: colorswag 2s 0.45s 2;
-}
-b:nth-child(10) {
-  animation: colorswag 2s 0.5s 2;
-}
-b:nth-child(11) {
-  animation: colorswag 2s 0.55s 2;
+  @for $i from 1 through 11 {
+    span:nth-child(#{$i}) {
+      animation: popup2 1s (0.1s * $i) forwards;
+    }
+  }
 }
 
 .hover-line {
@@ -207,48 +172,6 @@ b:nth-child(11) {
   width: 100%;
   right: 0;
   left: initial;
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-2px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(2px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-2px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(2px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
-@keyframes colorswag {
-  100% {
-    color: $darkblue;
-  }
 }
 
 .contactme {
@@ -291,19 +214,41 @@ b:nth-child(11) {
     font-family: "VT323", monospace;
     color: $font-shade;
   }
+  a {
+    text-decoration: none;
+  }
+  span {
+    color: transparent;
+  }
+  @for $i from 1 through 16 {
+    span:nth-child(#{$i}) {
+      animation: popup 1s (0.1s * $i) forwards;
+    }
+  }
 }
-.about-container {
+.container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 2em;
   padding: 2em;
+  height: 100vh;
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+align-items: center;
+    width: 100%;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
   .about {
     flex-direction: column;
     justify-content: center;
-    padding: 1em;
+    height: auto;
+    width: 15em;
+    padding: 0.5em;
     font-size: 1.5em;
-    height: 75vh;
     border: 1px solid $font-shade;
     background-color: #0000005b;
     border-radius: 0.5em;
@@ -350,21 +295,7 @@ b:nth-child(11) {
     }
   }
 }
-footer .about-head {
-  position: fixed;
-  bottom: 0;
-  left: 10vw;
-  width: 90%;
-}
 
-@keyframes popup {
-  50% {
-    color: $pink;
-  }
-  100% {
-    color: $font-col;
-  }
-}
 // About End //
 
 // Skills //
@@ -400,6 +331,7 @@ footer .about-head {
       transition: transform 0.8s;
       border-radius: 0.5em;
       border: 1px solid $font-shade;
+      background-color: #0000005b;
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
         10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -418,13 +350,13 @@ footer .about-head {
       h2 {
         &:before {
           content: "<h2> ";
-          font-size: 0.5em;
+          font-size: 0.75em;
           font-family: "VT323", monospace;
           color: $font-shade;
         }
         &:after {
           content: " </h2>";
-          font-size: 0.5em;
+          font-size: 0.75em;
           font-family: "VT323", monospace;
           color: $font-shade;
         }
@@ -432,13 +364,13 @@ footer .about-head {
       h3 {
         &:before {
           content: "<h3> ";
-          font-size: 0.5em;
+          font-size: 0.75em;
           font-family: "VT323", monospace;
           color: $font-shade;
         }
         &:after {
           content: " </h3>";
-          font-size: 0.5em;
+          font-size: 0.75em;
           font-family: "VT323", monospace;
           color: $font-shade;
         }
@@ -520,7 +452,6 @@ footer .about-head {
           color: $font-shade;
         }
       }
-    
     }
   }
 }
@@ -541,13 +472,6 @@ footer .about-head {
     font-family: "VT323", monospace;
     color: $font-shade;
   }
-}
-
-footer .skills-head {
-  position: fixed;
-  bottom: 0;
-  left: 10vw;
-  width: 90%;
 }
 
 // Skills End //
@@ -574,41 +498,113 @@ footer .skills-head {
 
 .work-container {
   display: flex;
-  padding: 2em;
-}
-
-footer .work-head {
-  position: fixed;
-  bottom: 0;
-  left: 10vw;
-  width: 90%;
+  width: 100%;
+  height: 80%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+  overflow: hidden;
+  .work {
+    padding: 0.5em;
+    width: 375px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0000005b;
+    border-radius: 0.5em;
+    border: 1px solid $font-shade;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    img {
+      width: 350px;
+      height: auto;
+      object-fit: contain;
+      margin: 1em 0;
+    }
+    h2 {
+      &:before {
+        content: "<h2> ";
+        font-size: 0.75em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+      &:after {
+        content: " </h2>";
+        font-size: 0.75em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: $font-col;
+      font-size: larger;
+      margin: 0.5em;
+      transition: 0.25s;
+      border-bottom: 1px solid $font-shade;
+      &:before {
+        content: "<a> ";
+        font-size: 0.75em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+      &:after {
+        content: " </a>";
+        font-size: 0.75em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+      &:hover {
+        color: $pink;
+      }
+    }
+    p {
+      &:before {
+        content: "<p> ";
+        font-size: 0.75em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+      &:after {
+        content: " </p>";
+        font-size: 0.75em;
+        font-family: "VT323", monospace;
+        color: $font-shade;
+      }
+    }
+  }
 }
 
 // Work End //
+// Contact - unter Media Query weil manche Sachen vom Media Query überschrieben wurden obwohl es in der Reihenfolge weiter oben war //
 
-// Contact //
 .contact {
   display: flex;
+  width: 100%;
+  flex-direction: row;
   justify-content: space-around;
   padding: 1em;
-  .contactcontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5em;
+  gap: 1em;
+.contactcontainer {
+    display: grid;
     padding: 0.5em;
+    height: 575px;
+    width: 600px;
     border: 1px solid $font-shade;
     -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
       5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
       5px 5px 15px 5px rgba(0, 0, 0, 0);
     border-radius: 0.5em;
-    width: 35vw;
     background-color: #0000005b;
     form {
       display: grid;
-      grid-template-columns: 3fr 5fr;
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: 0.5fr 0.5fr 1fr;
       grid-template-areas:
         "name email"
@@ -651,7 +647,7 @@ footer .work-head {
           10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
         box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
           5px 5px 15px 5px rgba(0, 0, 0, 0);
-          position: relative;
+        position: relative;
         &:hover {
           color: $pink;
           border-color: $pink;
@@ -661,7 +657,6 @@ footer .work-head {
           box-shadow: none;
         }
       }
-
       input,
       textarea {
         margin-top: 1em;
@@ -685,8 +680,8 @@ footer .work-head {
   }
   .iframe {
     iframe {
-      height: 76.5vh;
-      width: 35vw;
+      height: 575px;
+      width: 600px;
       border-radius: 0.5em;
       border: 1px solid $font-shade;
       -webkit-box-shadow: -10px 0px 13px -7px #000000,
@@ -718,24 +713,24 @@ footer .work-head {
 footer .contact-foot {
   text-align: center;
   font-size: 3em;
+  position: absolute;
   padding: 0.5rem;
-  position: fixed;
   font-size: 1.5em;
   font-weight: lighter;
   bottom: 0;
   left: 10vw;
   width: 90%;
-    &:before {
-      content: "<p> ";
-      font-size: 0.5em;
-      font-family: "VT323", monospace;
-      color: $font-shade;
-    }
-    &:after {
-      content: " </p>";
-      font-size: 0.5em;
-      font-family: "VT323", monospace;
-      color: $font-shade;
+  &:before {
+    content: "<p> ";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
+  }
+  &:after {
+    content: " </p>";
+    font-size: 0.5em;
+    font-family: "VT323", monospace;
+    color: $font-shade;
   }
   .fa-regular {
     font-size: 0.75em;
@@ -743,3 +738,249 @@ footer .contact-foot {
 }
 
 // Contact End //
+
+// Media Query //
+
+@media screen and (max-width: 1600px) {
+  body {
+    background-position: center;
+    position: relative;
+    z-index: 1;
+  }
+  main {
+    padding-top: 12.5vh;
+    position: initial;
+    left: initial;
+    height: initial;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .home,
+  .about,
+  .skills,
+  .work,
+  .contact {
+    height: auto;
+    width: 100%;
+  }
+  .navbar {
+    width: 100%;
+    height: auto;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 2;
+    justify-content: space-between;
+    background-color: #202020;
+    background-image: linear-gradient(
+      to right,
+      #02205080,
+      #17296080,
+      #28327080,
+      #3a3b8080,
+      #4c449080,
+      #5e489e80,
+      #714cac80,
+      #864fb880,
+      #a24bc380,
+      #c042ca80,
+      #df33ce80,
+      #ff0ace80
+    );
+    .nav-main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      li {
+        list-style-type: none;
+        text-align: center;
+        width: auto;
+        border-bottom: none;
+        padding: 1em;
+      }
+    }
+    .nav-logo {
+      width: 10vw;
+      height: auto;
+      border-bottom: none;
+    }
+    .nav-contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      padding: 1em;
+      .fa-brands {
+        font-size: 2em;
+        padding: 0.25em;
+        color: $font-col;
+      }
+    }
+  }
+  .homecontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .home {
+    padding-right: 0;
+    position: relative;
+    padding: 2em;
+    align-items: start;
+    justify-content: center;
+    height: 100%;
+    padding-right: 0;
+    color: $font-col;
+    span {
+      color: $pink;
+      display: inline-block;
+    }
+    span:hover {
+      animation: none;
+    }
+    h2 {
+      font-size: 3em;
+    }
+  }
+  .contactme {
+    margin: 1em 0 1em 1em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: 0.25s;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    &:hover {
+      color: $pink;
+      border-color: $pink;
+    }
+    &:active {
+      transform: translateY(2px) translateX(2px);
+      box-shadow: none;
+    }
+  }
+  .container {
+
+    gap: 1em;
+    padding: 1em;
+    height: auto;
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  align-items: center;
+      width: 100%;
+      gap: 1em;
+      flex-wrap: wrap;
+      .about {
+        width: auto;
+      }
+    }
+  }
+
+  .work-container {
+    flex-wrap: wrap;
+    .hidden {
+      display: none;
+    }
+  }
+  .contact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    gap: 1em;
+    .contactcontainer {
+      width: 100%;
+      height: 100%;
+      padding: 1em;
+      form {
+        display: grid;
+        grid-template-columns: 550px;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 0.5fr;
+        grid-template-areas:
+          "name"
+          "email"
+          "betreff"
+          "nachricht"
+          "button";
+        grid-column-gap: 0;
+      }
+      .button {
+        padding: 0.5em 1em;
+        border: 1px solid $font-shade;
+        border-radius: 0.5em;
+        color: $font-col;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      input,
+      textarea {
+        margin-top: 0.5em;
+        padding: 0.25em;
+      }
+    }
+  }
+  .iframe {
+    iframe {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 1024px) {
+  body {
+    font-size: 0.8em;
+  }
+  main {
+    padding-top: 20vh;
+  }
+  .navbar {
+    .nav-main {
+      flex-direction: column;
+      padding: 0;
+      li {
+        padding: 0;
+      }
+    }
+    .nav-logo {
+      width: 25vw;
+    }
+    .nav-contact {
+      flex-direction: column;
+      .fa-brands {
+        font-size: 1.5em;
+      }
+    }
+  }
+  .home {
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 0;
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+  .contact {
+    .contactcontainer {
+
+      form {
+
+        grid-template-columns: 375px;
+}
+    }
+  }
+}
+// Media Query End //
