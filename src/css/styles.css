@@ -1000,7 +1000,6 @@ footer .contact-foot .fa-regular {
     padding: 1em;
   }
   .contact .contactcontainer form {
-    display: grid;
     grid-template-columns: 550px;
     grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 0.5fr;
     grid-template-areas: "name" "email" "betreff" "nachricht" "button";
@@ -1024,7 +1023,7 @@ footer .contact-foot .fa-regular {
     display: none;
   }
 }
-@media screen and (min-width: 300px) and (max-width: 1024px) {
+@media screen and (min-width: 100px) and (max-width: 1024px) {
   body {
     font-size: 0.8em;
   }
@@ -1057,9 +1056,10 @@ footer .contact-foot .fa-regular {
   }
   .contact .contactcontainer {
     padding: 0.5em;
+    font-size: 1.25em;
   }
   .contact .contactcontainer form {
-    padding: 1em;
+    padding: 0.5em;
     grid-template-columns: 350px;
   }
 }
