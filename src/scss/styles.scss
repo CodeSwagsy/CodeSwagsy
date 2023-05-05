@@ -709,16 +709,12 @@ align-items: center;
   }
 }
 
-footer .contact-foot {
+.contact-foot {
   text-align: center;
   font-size: 3em;
-  position: absolute;
   padding: 0.5rem;
   font-size: 1.5em;
   font-weight: lighter;
-  bottom: 0;
-  left: 10vw;
-  width: 90%;
   &:before {
     content: "<p> ";
     font-size: 0.5em;

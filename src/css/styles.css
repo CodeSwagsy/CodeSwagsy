@@ -823,30 +823,26 @@ main {
   color: rgba(233, 235, 248, 0.5019607843);
 }
 
-footer .contact-foot {
+.contact-foot {
   text-align: center;
   font-size: 3em;
-  position: absolute;
   padding: 0.5rem;
   font-size: 1.5em;
   font-weight: lighter;
-  bottom: 0;
-  left: 10vw;
-  width: 90%;
 }
-footer .contact-foot:before {
+.contact-foot:before {
   content: "<p> ";
   font-size: 0.5em;
   font-family: "VT323", monospace;
   color: rgba(233, 235, 248, 0.5019607843);
 }
-footer .contact-foot:after {
+.contact-foot:after {
   content: " </p>";
   font-size: 0.5em;
   font-family: "VT323", monospace;
   color: rgba(233, 235, 248, 0.5019607843);
 }
-footer .contact-foot .fa-regular {
+.contact-foot .fa-regular {
   font-size: 0.75em;
 }
 
