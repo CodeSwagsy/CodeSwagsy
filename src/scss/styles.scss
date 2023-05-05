@@ -120,17 +120,17 @@ main {
   span {
     color: transparent;
   }
-  h2 {
+  h1 {
     font-size: 4em;
   }
-  h2::before {
-    content: "<h2> ";
+  h1::before {
+    content: "<h1> ";
     font-size: 0.5em;
     font-family: "VT323", monospace;
     color: $font-shade;
   }
-  h2::after {
-    content: " </h2>";
+  h1::after {
+    content: " </h1>";
     font-size: 0.5em;
     font-family: "VT323", monospace;
     color: $font-shade;
@@ -232,6 +232,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   gap: 2em;
   padding: 2em;
   height: 100vh;
@@ -842,7 +843,7 @@ footer .contact-foot {
     span:hover {
       animation: none;
     }
-    h2 {
+    h1 {
       font-size: 3em;
     }
   }
@@ -868,7 +869,7 @@ footer .contact-foot {
   .container {
 
     gap: 1em;
-    padding: 1em;
+    padding: 0.5em;
     height: auto;
     .content-container {
       display: flex;
@@ -967,7 +968,7 @@ footer .contact-foot {
     justify-content: center;
     align-items: flex-start;
     padding-right: 0;
-    h2 {
+    h1 {
       font-size: 2em;
     }
   }

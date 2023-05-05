@@ -173,17 +173,17 @@ main {
 .home span {
   color: transparent;
 }
-.home h2 {
+.home h1 {
   font-size: 4em;
 }
-.home h2::before {
-  content: "<h2> ";
+.home h1::before {
+  content: "<h1> ";
   font-size: 0.5em;
   font-family: "VT323", monospace;
   color: rgba(233, 235, 248, 0.5019607843);
 }
-.home h2::after {
-  content: " </h2>";
+.home h1::after {
+  content: " </h1>";
   font-size: 0.5em;
   font-family: "VT323", monospace;
   color: rgba(233, 235, 248, 0.5019607843);
@@ -353,6 +353,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   gap: 2em;
   padding: 2em;
   height: 100vh;
@@ -938,7 +939,7 @@ footer .contact-foot .fa-regular {
   .home span:hover {
     animation: none;
   }
-  .home h2 {
+  .home h1 {
     font-size: 3em;
   }
   .contactme {
@@ -960,7 +961,7 @@ footer .contact-foot .fa-regular {
   }
   .container {
     gap: 1em;
-    padding: 1em;
+    padding: 0.5em;
     height: auto;
   }
   .container .content-container {
@@ -1050,7 +1051,7 @@ footer .contact-foot .fa-regular {
     align-items: flex-start;
     padding-right: 0;
   }
-  .home h2 {
+  .home h1 {
     font-size: 2em;
   }
   .contact .contactcontainer {
