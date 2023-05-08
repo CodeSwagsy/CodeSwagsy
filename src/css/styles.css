@@ -275,6 +275,7 @@ main {
   font-size: 1.25em;
   padding: 1em 2em;
   border: 1px solid rgba(233, 235, 248, 0.5019607843);
+  background-color: rgba(255, 255, 255, 0.1568627451);
   border-radius: 0.5em;
   color: #e9ebf8;
   text-decoration: none;
