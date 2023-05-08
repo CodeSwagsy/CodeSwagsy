@@ -353,7 +353,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 2em;
   padding: 2em;
   height: 100vh;
@@ -713,6 +713,7 @@ main {
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   padding: 1em;
   gap: 1em;
 }
