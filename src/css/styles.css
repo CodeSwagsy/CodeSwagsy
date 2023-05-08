@@ -108,7 +108,7 @@ body {
 .navbar .nav-main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .navbar .nav-main li {
