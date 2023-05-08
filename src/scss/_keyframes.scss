@@ -24,6 +24,23 @@
   }
 }
 
+@keyframes breathing {
+
+  25% {
+    transform: scale(0.90);
+  }
+
+  50% {
+    transform: scale(1.0);
+  }
+
+  75% {
+    transform: scale(0.90);
+  }
+}
+
+
+
 b:nth-child(1) {
   animation: colorswag 2s 0.05s 2;
 }

@@ -187,6 +187,7 @@ font-size: 1.25em;
   align-self: self-end;
   margin: 1em 0;
   transition: 0.25s;
+  animation: breathing 8s infinite;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -194,6 +195,7 @@ font-size: 1.25em;
   &:hover {
     color: $pink;
     border-color: $pink;
+    animation-play-state: paused;
   }
   &:active {
     transform: translateY(2px) translateX(2px);
