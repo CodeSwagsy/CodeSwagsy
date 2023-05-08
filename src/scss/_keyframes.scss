@@ -14,8 +14,13 @@
 }
 
 @keyframes popup2 {
+80% {
+  text-shadow: 1px 1px 1px $font-shade;
+}
+
   100% {
     color: $pink;
+    text-shadow: 1px 1px 2px $font-shade;
   }
 }
 

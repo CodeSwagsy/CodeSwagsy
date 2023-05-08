@@ -13,7 +13,7 @@ $pink: #ff0ace;
 @import "keyframes";
 
 body {
-  background-image: url(../img/bg.jpeg);
+background: linear-gradient(rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.199)),  url(../img/bg.jpeg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,8 +42,9 @@ body {
     #ff0ace80
   );
   position: fixed;
-  -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 7px 5px 0px 5px rgba(210,110,255,0); 
-  box-shadow: 2px 5px 16px 0px #0B325E, 7px 5px 0px 5px rgba(210,110,255,0);
+  -webkit-box-shadow: 2px 5px 16px 0px #0b325e,
+    7px 5px 0px 5px rgba(210, 110, 255, 0);
+  box-shadow: 2px 5px 16px 0px #0b325e, 7px 5px 0px 5px rgba(210, 110, 255, 0);
   .nav-logo {
     background-image: url(../img/logo_transparent.png);
     background-repeat: no-repeat;
@@ -177,13 +178,14 @@ main {
 }
 
 .contactme {
+font-size: 1.25em;
   padding: 1em 2em;
   border: 1px solid $font-shade;
   border-radius: 0.5em;
   color: $font-col;
   text-decoration: none;
   align-self: self-end;
-  margin: 3em 0;
+  margin: 1em 0;
   transition: 0.25s;
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -240,7 +242,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-align-items: center;
+    align-items: center;
     width: 100%;
     gap: 1em;
     flex-wrap: wrap;
@@ -592,7 +594,7 @@ align-items: center;
   align-items: center;
   padding: 1em;
   gap: 1em;
-.contactcontainer {
+  .contactcontainer {
     display: grid;
     padding: 0.5em;
     height: 575px;
@@ -867,7 +869,6 @@ align-items: center;
     }
   }
   .container {
-
     gap: 1em;
     padding: 0.5em;
     height: auto;
@@ -875,7 +876,7 @@ align-items: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-  align-items: center;
+      align-items: center;
       width: 100%;
       gap: 1em;
       flex-wrap: wrap;
@@ -983,7 +984,7 @@ align-items: center;
       form {
         padding: 0.5em;
         grid-template-columns: 350px;
-}
+      }
     }
   }
 }
