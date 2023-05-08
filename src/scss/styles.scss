@@ -737,7 +737,7 @@ align-items: center;
 
 // Media Query //
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1440px) {
   body {
     background-position: center;
     position: relative;
@@ -828,6 +828,7 @@ align-items: center;
   }
   .home {
     padding: 1em;
+    margin-left: 0.5em;
     align-items: flex-start;
     justify-content: center;
     height: 100%;
@@ -842,10 +843,12 @@ align-items: center;
     }
     h1 {
       font-size: 3em;
+      margin-left: 2em;
     }
   }
   .contactme {
     margin: 1em 0 1em 1em;
+    margin-left: 4.5em;
     padding: 0.5em 1em;
     text-decoration: none;
     align-self: flex-start;
@@ -966,7 +969,11 @@ align-items: center;
     align-items: flex-start;
     padding-right: 0;
     h1 {
-      font-size: 2em;
+      font-size: 1.5em;
+      margin-left: 0;
+    }
+    .contactme {
+      margin-left: 1em;
     }
   }
   .contact {

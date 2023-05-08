@@ -847,7 +847,7 @@ main {
   font-size: 0.75em;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1440px) {
   body {
     background-position: center;
     position: relative;
@@ -923,6 +923,7 @@ main {
   }
   .home {
     padding: 1em;
+    margin-left: 0.5em;
     align-items: flex-start;
     justify-content: center;
     height: 100%;
@@ -938,9 +939,11 @@ main {
   }
   .home h1 {
     font-size: 3em;
+    margin-left: 2em;
   }
   .contactme {
     margin: 1em 0 1em 1em;
+    margin-left: 4.5em;
     padding: 0.5em 1em;
     text-decoration: none;
     align-self: flex-start;
@@ -1049,7 +1052,11 @@ main {
     padding-right: 0;
   }
   .home h1 {
-    font-size: 2em;
+    font-size: 1.5em;
+    margin-left: 0;
+  }
+  .home .contactme {
+    margin-left: 1em;
   }
   .contact .contactcontainer {
     padding: 0.5em;
